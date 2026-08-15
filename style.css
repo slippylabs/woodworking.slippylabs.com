@@ -1365,7 +1365,21 @@ svg.dwg text { font-family: "Consolas", "SFMono-Regular", Menlo, Monaco, "Courie
     background: #fff !important; backdrop-filter: none !important; padding: 0;
   }
   h1, .sub-head, .callsign { color: #000 !important; text-shadow: none !important; }
-  .subtitle, .ctrl-label, .wood-table th, .wood-table td.note { color: #333 !important; }
+  .subtitle, .ctrl-label, .tool-note, .wood-table th, .wood-table td.note { color: #333 !important; }
+  .step-list, .step-list li, .tool-check, .plan-joinery { color: #000 !important; }
+  .plan-joinery { border-left-color: #000; }
+  .chip { color: #000 !important; border-color: #777 !important; }
+  .stat-tile { border: 1px solid #000; background: #fff; }
+  .stat-tile .stat-value { color: #000 !important; }
+  .stat-tile .stat-label { color: #333 !important; }
+  /* A slider is meaningless on paper; the figure beside it is the point. */
+  input[type="range"] { display: none !important; }
+  .tool-slider-row { justify-content: flex-start; }
+  .tool-slider-value { color: #000 !important; font-size: 0.9rem; text-align: left; }
+  .tool-select, .tool-text-input {
+    color: #000 !important; background: #fff !important; border: 1px solid #777;
+    -webkit-appearance: none; appearance: none; padding: 2px 4px;
+  }
   .two-col { grid-template-columns: 1fr; }
   .dwg-frame { border: 1px solid #000; background: #fff; }
   .dwg-part { fill: none; stroke: #000; }
@@ -1382,7 +1396,11 @@ svg.dwg text { font-family: "Consolas", "SFMono-Regular", Menlo, Monaco, "Courie
   .stock-board { border-color: #000; background: #fff; }
   /* A part should not be split across a page break, and neither should a step. */
   .wood-table tr, .step-list li, .warn-list li, .dwg-frame { page-break-inside: avoid; }
-  .sub-head { page-break-after: avoid; }
+  .sub-head { page-break-after: avoid; border-bottom-color: #999; }
+  /* The dashed rules are drawn in the HUD's green; on paper they all but vanish. */
+  .wood-table th { border-bottom-color: #000; }
+  .wood-table td { border-bottom-color: #ccc; }
+  .stock-board, .table-scroll { border-color: #000; }
   .print-only { display: block !important; }
 }
 .print-only { display: none; }
