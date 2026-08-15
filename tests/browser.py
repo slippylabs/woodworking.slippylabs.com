@@ -44,10 +44,22 @@ def watch(page, origin):
     failure gets swallowed with it.
     """
     errs = []
-    page.on('console', lambda m: errs.append(f'console.{m.type}: {m.text}')
-            if m.type == 'error' else None)
+
+    def on_console(m):
+        if m.type != 'error':
+            return
+        # A console line carries no URL, so a third-party resource failure is
+        # indistinguishable here from one of ours. Every such message is paired
+        # with a requestfailed event below, which DOES have a URL and is
+        # filtered by origin — so drop the generic message and keep the
+        # authoritative signal. Real JS errors from our own code still land.
+        if 'Failed to load resource' in m.text:
+            return
+        errs.append(f'console.{m.type}: {m.text}')
+
+    page.on('console', on_console)
     page.on('pageerror', lambda e: errs.append(f'pageerror: {e}'))
-    page.on('requestfailed', lambda r: errs.append(f'requestfailed: {r.url}')
+    page.on('requestfailed', lambda r: errs.append(f'requestfailed: {r.url} {r.failure}')
             if r.url.startswith(origin) else None)
     return errs
 
