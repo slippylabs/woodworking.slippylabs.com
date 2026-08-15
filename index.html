@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woodworking Plans // woodworking.slippylabs.com</title>
+<meta name="description" content="Parametric plans for planters, tables, shelves and shop furniture. Dial in the size you actually want and get a dimensioned drawing, a cut list in real fractions, a board-by-board shopping list and printable steps.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://woodworking.slippylabs.com/">
+<meta property="og:title" content="Woodworking Plans // woodworking.slippylabs.com">
+<meta property="og:description" content="Parametric plans for planters, tables, shelves and shop furniture. Dial in the size you actually want and get a dimensioned drawing, a cut list in real fractions, a board-by-board shopping list and printable steps.">
+<meta property="og:image" content="https://woodworking.slippylabs.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Woodworking Plans // woodworking.slippylabs.com">
+<meta name="twitter:description" content="Parametric plans for planters, tables, shelves and shop furniture. Dial in the size you actually want and get a dimensioned drawing, a cut list in real fractions, a board-by-board shopping list and printable steps.">
+<meta name="twitter:image" content="https://woodworking.slippylabs.com/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2234%22%20r%3D%2222%22%20fill%3D%22%231c8a52%22%20stroke%3D%22%2339ff8f%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2216%22%20r%3D%228%22%20fill%3D%22%231c8a52%22%20stroke%3D%22%2339ff8f%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2244%22%20cy%3D%2216%22%20r%3D%228%22%20fill%3D%22%231c8a52%22%20stroke%3D%22%2339ff8f%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#050b10">
+<link rel="stylesheet" href="style.css?v=1">
+<script>/* perf-lite: drop blend/blur effects on low-power devices. ?fx=lite or ?fx=full to override (persisted). */
+(function(){try{var k="slippy-fx",m=location.search.match(/[?&]fx=(lite|full)/),v=m?m[1]:localStorage.getItem(k);if(m)localStorage.setItem(k,v);if(v==="lite"||(v!=="full"&&(navigator.hardwareConcurrency||8)<=2))document.documentElement.classList.add("perf-lite");}catch(e){}})();</script>
+</head>
+<body>
+
+<div class="starfield"></div>
+<div class="scanlines"></div>
+
+<main class="page-wrap">
+  <div class="hud-panel xwide">
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="callsign-row print-hide">
+      <div class="toad-avatar-wrap">
+        <svg class="toad-avatar" width="46" height="46" viewBox="0 0 64 64">
+          <circle cx="32" cy="34" r="22" fill="#1c8a52" stroke="#39ff8f" stroke-width="2"/>
+          <circle cx="20" cy="16" r="8" fill="#1c8a52" stroke="#39ff8f" stroke-width="2"/>
+          <circle cx="44" cy="16" r="8" fill="#1c8a52" stroke="#39ff8f" stroke-width="2"/>
+          <circle cx="20" cy="16" r="3.5" fill="#050b10"/>
+          <circle cx="44" cy="16" r="3.5" fill="#050b10"/>
+          <ellipse cx="24" cy="32" rx="4.5" ry="5.5" fill="#050b10"/>
+          <ellipse cx="40" cy="32" rx="4.5" ry="5.5" fill="#050b10"/>
+          <circle cx="24" cy="30" r="1.4" fill="#39ff8f"/>
+          <circle cx="40" cy="30" r="1.4" fill="#39ff8f"/>
+          <path d="M22 42 Q32 48 42 42" stroke="#050b10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="lock-reticle"></div>
+      </div>
+      <span class="callsign">Workshop Division // Plans</span>
+      <div class="nav-links">
+        <a href="https://projects.slippylabs.com/" class="logout-link">&larr; Archive</a>
+      </div>
+    </div>
+
+    <h1 id="page-title">WOODWORKING PLANS</h1>
+    <p class="subtitle" id="page-sub">Pick a build, set the dimensions you actually want, and get a dimensioned drawing, a cut list in real fractions, a board-by-board shopping list and steps you can print and take to the shop.</p>
+
+    <!-- ---------------- gallery ---------------- -->
+    <section id="gallery-panel">
+      <p class="tool-note">Every plan on this page is parametric: the drawings, the cut list and the price all
+        recompute as you move a slider. Sizes are worked out in <em>actual</em> lumber dimensions &mdash; a 1x6
+        is 5-1/2" wide, not 6" &mdash; and where a slatted panel can only land on a whole number of boards, the
+        page tells you the size you will really end up with instead of the one you asked for. Nothing is uploaded
+        anywhere; it all runs in this tab.</p>
+
+      <div class="filter-bar" id="filter-bar"></div>
+      <div class="console-grid" id="plan-grid"></div>
+
+      <div class="tool-controls">
+        <button class="tool-btn" id="sample-btn">Open an example</button>
+      </div>
+    </section>
+
+    <!-- ---------------- one plan ---------------- -->
+    <section id="plan-panel" class="hidden">
+      <button class="plan-crumb print-hide" id="back-btn">&larr; All plans</button>
+      <div class="plan-chips" id="plan-chips"></div>
+      <p class="plan-joinery" id="plan-joinery"></p>
+      <div id="error-slot"></div>
+
+      <div class="two-col" id="plan-body">
+        <div id="dwg-col">
+          <div class="filter-bar print-hide" id="view-bar">
+            <button class="hud-tab active" data-view="front">Front</button>
+            <button class="hud-tab" data-view="side">Side</button>
+            <button class="hud-tab" data-view="top">Plan</button>
+            <button class="hud-tab" data-view="iso">Exploded</button>
+          </div>
+          <div class="dwg-frame print-hide" id="dwg-slot"></div>
+          <div class="print-only" id="dwg-print"></div>
+        </div>
+        <div>
+          <div class="sub-head">Dimensions</div>
+          <div class="ctrl-stack" id="ctrl-slot"></div>
+          <hr class="ctrl-divider print-hide">
+          <div class="ctrl-stack print-hide" id="shop-slot"></div>
+        </div>
+      </div>
+
+      <div id="result-block">
+      <div class="stat-grid" id="stat-slot"></div>
+      <ul class="warn-list" id="warn-slot"></ul>
+
+      <div class="sub-head">Cut list</div>
+      <div class="table-scroll"><table class="wood-table" id="cut-slot"></table></div>
+
+      <div class="sub-head">What to buy</div>
+      <div id="stock-slot"></div>
+
+      <div id="angle-block">
+        <div class="sub-head">Saw settings</div>
+        <div class="table-scroll"><table class="wood-table" id="angle-slot"></table></div>
+      </div>
+
+      <div class="sub-head">Hardware</div>
+      <div class="table-scroll"><table class="wood-table" id="hw-slot"></table></div>
+
+      <div class="sub-head">Build it</div>
+      <ol class="step-list" id="step-slot"></ol>
+      </div>
+
+      <div class="tool-controls print-hide">
+        <button class="tool-btn" id="print-btn">Print this plan</button>
+        <button class="tool-btn ghost" id="csv-btn">Cut list (CSV)</button>
+        <button class="tool-btn ghost" id="svg-btn">Drawing (SVG)</button>
+        <button class="tool-btn ghost" id="link-btn">Copy link</button>
+        <span class="copy-toast" id="copy-toast">link copied</span>
+      </div>
+    </section>
+
+    <p class="tool-note print-hide" id="foot-note">Prices are a rough national average for planed softwood and
+      sheet goods, editable above &mdash; they are a ballpark for the shopping trip, not a quote. Every dimension
+      here is checked against a 3D model of the finished piece before it reaches this page: if the cut list and
+      the drawing ever disagreed, the plan would not build.</p>
+
+    <div class="comm-window print-hide">
+      <div class="comm-portrait">
+        <svg width="36" height="36" viewBox="0 0 64 64">
+          <circle cx="32" cy="34" r="22" fill="#1c8a52" stroke="#39ff8f" stroke-width="2"/>
+          <circle cx="20" cy="16" r="8" fill="#1c8a52" stroke="#39ff8f" stroke-width="2"/>
+          <circle cx="44" cy="16" r="8" fill="#1c8a52" stroke="#39ff8f" stroke-width="2"/>
+          <circle cx="20" cy="16" r="3.5" fill="#050b10"/>
+          <circle cx="44" cy="16" r="3.5" fill="#050b10"/>
+          <ellipse cx="24" cy="32" rx="4.5" ry="5.5" fill="#050b10"/>
+          <ellipse cx="40" cy="32" rx="4.5" ry="5.5" fill="#050b10"/>
+          <circle cx="24" cy="30" r="1.4" fill="#39ff8f"/>
+          <circle cx="40" cy="30" r="1.4" fill="#39ff8f"/>
+          <path d="M22 42 Q32 48 42 42" stroke="#050b10" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="comm-body">
+        <div class="comm-label"><span class="dot"></span> Incoming Transmission &mdash; Slippy</div>
+        <p>"Measure twice. The board only believes you once."</p>
+      </div>
+    </div>
+
+    <a href="https://projects.slippylabs.com/" class="hud-btn print-hide">&larr; Back to Archive</a>
+  </div>
+</main>
+
+<script src="lumber.js?v=1"></script>
+<script src="geometry.js?v=1"></script>
+<script src="drawing.js?v=1"></script>
+<script src="optimizer.js?v=1"></script>
+<script src="plans.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
