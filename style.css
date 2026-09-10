@@ -1425,6 +1425,9 @@ svg.dwg text { font-family: "Consolas", "SFMono-Regular", Menlo, Monaco, "Courie
   .tool-file-input,
   .tool-color-input,
   .tool-text-input,
+  /* Number inputs render 42px from their own padding -- 2px short, and
+     they are the primary control on the calculator-shaped tools. */
+  .tool-number-input,
   .tip-quick-btn,
   .station-tune-btn,
   .plan-crumb,
